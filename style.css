@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Isometra&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Isometra&display=swap');
+:root {
+    --bg: #0D1B2A;
+    --surface: #16293D;
+    --text: #E8EEF2;
+    --muted: #8FA6B8;
+    --accent: #3FA796;
+
+    --low: #4caf4fd0;
+    --moderate: #d9a62ed0;
+    --high: #e07a3fd0;
+    --critical: #c84b4bd0;
+    --gradient: linear-gradient(45deg, #ff007f, #7f00ff, #00f0ff);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 40px 20px;
+    background-color: #00345e;
+    color: var(--text);
+    line-height: 1.5;
+}
+
+#bgVideo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(13, 27, 42, 0.75);
+    z-index: -1;
+}
+
+h1 {
+  font-family: "Isometra", serif;
+  font-weight: 300;
+  font-style: normal;
+    font-size: 2.5rem;
+    max-width: 90vw;
+    margin: 0 auto 32px auto;
+    text-align: center;
+}
+label{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 0.95rem;
+    color: white;
+}
+label:hover{
+    transition: 0.2s;
+    font-size: 18px;
+}
+
+.submit{
+    font-family: "Black Ops One", system-ui;
+  font-weight: 400;
+  font-style: normal;
+    background-color: #68c1fc;
+    color: black;
+    width: 150px;
+    height: 30px;
+    border-radius: 15%;
+    border-color: black;
+}
+.submit:hover{
+    background-color: #a3ceec;
+    box-shadow: 0px 5px 15px var(--muted);
+    transform: scale(1.1);
+    transition: 0.2s;
+}
+
+form {
+    background-color: #0000005e;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 32px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+input[type="number"] {
+    background-color: #0d1b2aab;
+    border: 1px solid var(--muted);
+    border-radius: 6px;
+    padding: 10px 12px;
+    color: var(--text);
+    font-size: 1rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+input[type="number"]:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+#result {
+    max-width: 500px;
+    margin: 24px auto 0 auto;
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding: 16px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+#result.low {
+    background-color: var(--low);
+    color: #0D1B2A;
+}
+
+#result.moderate {
+    background-color: var(--moderate);
+    color: #0D1B2A;
+}
+
+#result.high {
+    background-color: var(--high);
+    color: #0D1B2A;
+}
+
+#result.critical {
+    background-color: var(--critical);
+    color: white;
+}
+
+.slider{
+    background-color: #0000005e;
+    max-width: 500px;
+    margin: 24px auto 0 auto;
+    padding: 24px 32px;
+    border-radius: 12px;
+}
+
+.slider h3 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-top: 0;
+}
+
+.slider p {
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+input[type="range"] {
+    width: 100%;
+    margin-top: 12px;
+    accent-color: var(--accent);
+}
+
+#sliderValue {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.mapWrap{
+    max-width: 70vw;
+    margin: 24px auto 0 auto;
+    padding: 20px;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    background-color:#0000005e;
+    border-radius: 10px;
+}
+
+#map{
+    height: 500px;
+    flex: 1;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.indicators {
+    border-radius: 12px;
+    padding: 20px;
+    min-width: 160px;
+}
+
+.indicators p {
+    margin: 0 0 12px 0;
+    font-size: 0.95rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}

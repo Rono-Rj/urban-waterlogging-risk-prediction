@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Waterlogging Risk Predictor</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+<body>
+    <h1>Urban Waterlogging Risk Predictor</h1><br></br>
+    <video autoplay muted loop playsinline id="bgVideo">
+    <source src="backgroundVideo.mp4" type="video/mp4">
+</video>
+    <form id="prediction-form">
+        <label>Rainfall Intensity (mm/hr): <input type="number" id="rainfall_intensity" min="0" max="200" placeholder="00"></label>
+        <label>Rainfall Duration (hrs): <input type="number" id="rainfall_duration" min="0" max="48" placeholder="00"></label>
+        <label>Elevation (m): <input type="number" id="elevation" max="100" placeholder="00"></label>
+        <label>Drainage Capacity (mm/hr): <input type="number" id="drainage_capacity" min="0" max="100" placeholder="00"></label>
+        <label>Previous Rainfall (mm): <input type="number" id="previous_rainfall" min="0" max="200" placeholder="00"></label>
+        <label>Impervious Surface (%): <input type="number" id="impervious_surface" min="10" placeholder="10"></label>
+        <br></br>
+        <button class="submit" type="submit">Predict Risk</button>
+    </form>
+    <div class="slider">
+        <h3>Sponge City Simulator</h3>
+        <p>Keep rainfall and terrain fixed — just change how much ground is paved.</p>
+        <label>
+            Impervious Surface: <span id="sliderValue">10 %</span>
+            <input type="range" id="imperviousSlider" min="10" max="98" value="10">
+        </label>
+    </div>
+    <h2 id="result"></h2>
+    <div class="mapWrap">
+        <div id="map"></div>
+        <div class="indicators">
+            <p>🟢 LOW RISK</p>
+            <p>🟡 MODERATE RISK</p>
+            <p>🟠 HIGH RISK</p>
+            <p>🔴 CRITICAL RISK</p>
+        </div>
+    </div>
+    <p id="coords-display" style="text-align: center; color: var(--muted);"></p>
+    <script src="script.js"></script>
+</body>
+</html>
